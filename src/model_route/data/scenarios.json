@@ -1,0 +1,31 @@
+{
+  "task_templates": [
+    {"id": "parse-config", "description": "Parse a known configuration schema", "domain": "code", "complexity": 1},
+    {"id": "refactor-client", "description": "Refactor a client and update its tests", "domain": "code", "complexity": 2},
+    {"id": "design-rollback", "description": "Plan a distributed migration with rollback", "domain": "code", "complexity": 3},
+    {"id": "rewrite-heading", "description": "Rewrite a heading for clarity", "domain": "writing", "complexity": 1},
+    {"id": "draft-guide", "description": "Draft a guide with examples and review", "domain": "writing", "complexity": 2},
+    {"id": "reconcile-audiences", "description": "Reconcile competing audiences in a long document", "domain": "writing", "complexity": 3},
+    {"id": "extract-fact", "description": "Extract one fact from a short passage", "domain": "reasoning", "complexity": 1},
+    {"id": "compare-options", "description": "Compare several options against constraints", "domain": "reasoning", "complexity": 2},
+    {"id": "debug-ambiguous", "description": "Diagnose an ambiguous multi-step failure", "domain": "reasoning", "complexity": 3}
+  ],
+  "users": [
+    {
+      "id": "demo-01",
+      "success_offsets": {
+        "quick": {"code": 0.08, "writing": 0.08, "reasoning": 0.05},
+        "balanced": {"code": -0.03, "writing": -0.02, "reasoning": -0.02},
+        "careful": {"code": -0.08, "writing": -0.07, "reasoning": -0.07}
+      }
+    },
+    {
+      "id": "demo-02",
+      "success_offsets": {
+        "quick": {"code": -0.11, "writing": -0.08, "reasoning": -0.10},
+        "balanced": {"code": 0.02, "writing": 0.03, "reasoning": 0.02},
+        "careful": {"code": 0.03, "writing": 0.02, "reasoning": 0.04}
+      }
+    }
+  ]
+}
