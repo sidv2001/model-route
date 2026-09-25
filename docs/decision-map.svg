@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="468" viewBox="0 0 1120 468" role="img" aria-labelledby="diagram-title diagram-desc">
+  <title id="diagram-title">Model-route subtask decision map</title>
+  <desc id="diagram-desc">Four connected steps: declare a task's domain and complexity; score synthetic priors and opt-in history, then choose one model and log its propensity; execute only that model with at most two same-model retries; record verification, total credits, and retry count. A feedback arrow returns verified reward to the policy only when the user has opted in.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7faf9"/>
+      <stop offset="1" stop-color="#e8f1f5"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-15%" y="-20%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#28475c" flood-opacity=".12"/>
+    </filter>
+    <marker id="next-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#237e7a"/>
+    </marker>
+    <marker id="feedback-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#ac542b"/>
+    </marker>
+  </defs>
+
+  <rect width="1120" height="468" rx="24" fill="url(#background)"/>
+  <text x="34" y="50" fill="#183449" font-family="system-ui, sans-serif" font-size="26" font-weight="700">One subtask. One chosen model.</text>
+  <text x="34" y="80" fill="#405c6c" font-family="system-ui, sans-serif" font-size="16">Cost, verification, and consent stay visible at every step.</text>
+
+  <g fill="none" stroke="#237e7a" stroke-width="3" marker-end="url(#next-arrow)">
+    <path d="M258 227 H290"/>
+    <path d="M532 227 H564"/>
+    <path d="M806 227 H838"/>
+  </g>
+
+  <g filter="url(#soft-shadow)" stroke="#c4d8df" stroke-width="1.5">
+    <rect x="34" y="122" width="224" height="207" rx="18" fill="#fff"/>
+    <rect x="304" y="122" width="228" height="207" rx="18" fill="#fff"/>
+    <rect x="578" y="122" width="228" height="207" rx="18" fill="#fff"/>
+    <rect x="852" y="122" width="234" height="207" rx="18" fill="#fff"/>
+  </g>
+
+  <g font-family="system-ui, sans-serif">
+    <g fill="#006b67" font-size="13" font-weight="700" letter-spacing="1">
+      <text x="55" y="157">01 / DECLARE</text>
+      <text x="325" y="157">02 / ROUTE</text>
+      <text x="599" y="157">03 / EXECUTE</text>
+      <text x="873" y="157">04 / VERIFY</text>
+    </g>
+    <g fill="#17364a" font-size="21" font-weight="700">
+      <text x="55" y="191">Describe context</text>
+      <text x="325" y="191">Score three priors</text>
+      <text x="599" y="191">Call one model</text>
+      <text x="873" y="191">Record outcome</text>
+    </g>
+    <g fill="#405c6c" font-size="15">
+      <text x="55" y="229">domain + complexity</text>
+      <text x="55" y="257">anonymous task id</text>
+      <text x="55" y="285">no task text in logs</text>
+
+      <text x="325" y="229">opt-in context history</text>
+      <text x="325" y="257">epsilon-greedy choice</text>
+      <text x="325" y="285">log P(chosen model)</text>
+
+      <text x="599" y="229">Quick / Balanced / Careful</text>
+      <text x="599" y="257">retry on verified failure</text>
+      <text x="599" y="285">at most two retries</text>
+
+      <text x="873" y="229">success or unknown</text>
+      <text x="873" y="257">all credits + retries</text>
+      <text x="873" y="285">reward if verified</text>
+    </g>
+  </g>
+
+  <path d="M969 330 V371 H417 V334" fill="none" stroke="#ac542b" stroke-width="3" marker-end="url(#feedback-arrow)"/>
+  <rect x="439" y="351" width="403" height="39" rx="19" fill="#fff1e9" stroke="#d28a66"/>
+  <text x="640" y="376" text-anchor="middle" fill="#713719" font-family="system-ui, sans-serif" font-size="15" font-weight="650">Opt-in: verified reward updates this user's context</text>
+  <text x="34" y="438" fill="#405c6c" font-family="system-ui, sans-serif" font-size="14">Only the selected model's observed result enters the report.</text>
+</svg>
